@@ -1,11 +1,23 @@
-#ifndef BOCA
-#define BOCA 
-#include <iostream>
+#ifndef BOCA_H
+#define BOCA_H
+#include <QPainter>
+#include<iostream>
 using namespace std;
-class boca {
-    virtual ~boca ();
-    
-    
-    
+class boca
+{
+protected:
+
+        QString Nombre;
+        QString Ruta;
+        double xcord;
+        double ycord;
+public:
+    boca(double x, double y);
+    double getx();
+    double setx(double _xcord);
+    double gety();
+    double sety(double _ycord);
+    virtual void drawMe(QPainter *DrawHere)=0;
 };
-#endif
+
+#endif // BOCA_H
